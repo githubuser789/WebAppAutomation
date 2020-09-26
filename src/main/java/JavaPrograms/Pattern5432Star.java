@@ -1,4 +1,4 @@
-package org.Programs;
+package JavaPrograms;
 
 public class Pattern5432Star {
     public static void main(String[] args) {

@@ -1,24 +1,26 @@
 package General;
 
+import Configuration.RetrieveProperties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
-public class BaseClass
+public class BaseClass extends RetrieveProperties
 {
-    public static WebDriver driver;
 
-    
-    public static void initializeBrowser()
-    {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\JamalpuC\\Downloads\\chromedriver.exe");
 
-        driver=new ChromeDriver();
+   @BeforeTest
+   public void setupApplication() {
+       retrieveProperties();
+       upAndRunApplication();
 
-        driver.manage().window().maximize();
-
-        driver.get("https://paytm.com/");
-
-        driver.close();
-
+   }
+   @AfterTest
+   public void closeDriver() {
+       quitApp();
+   }
     }
-}
+

@@ -1,4 +1,4 @@
-package org.Programs;
+package JavaPrograms;
 
 public class Prime
 {
